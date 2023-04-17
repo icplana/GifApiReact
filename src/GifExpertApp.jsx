@@ -15,8 +15,15 @@ export const GifExpertApp = () => {
         // console.log(newCategory)
         setCategories([ newCategory, ...categories])
         // setCategories(cat => [...cat, 'Valorant'])
-       
+        
     }
+
+    // const deleteCategory = (e) => {
+    //     const cat = e.target.previousSibling.innerHTML
+    //     const arr = categories
+    //     const temporalArr = arr.filter( category => category !== cat )
+    //     setCategories(temporalArr)
+    // }
 
     return (
     <>
@@ -28,17 +35,18 @@ export const GifExpertApp = () => {
         />
 
         { 
-            categories.map( category =>(
+            categories.map( (category,i,arr) =>(
                 <GifGrid 
                 key={ category } 
-                category={ category } />            
+                category={ category }
+                arr = { arr }
+                />            
             )) 
         }
             
     </>
   )
 }
-
 
 
 // const apiKey = 'MfhRWwqIRA55zbjQTF4CV9EYZeYM47RE'
