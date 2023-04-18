@@ -1,6 +1,6 @@
 // import React from 'react' no necesario desde React 17
 import { useState } from "react"
-
+import { PropTypes } from 'prop-types' //para poder usar hay que hacer yarn add prop-types o el respectivo npm
 export const AddCategory = ({ onNewCategory }) => {
     
     const [ inputValue, setInputValue ] = useState('')
@@ -21,7 +21,7 @@ export const AddCategory = ({ onNewCategory }) => {
     }
 
     return (
-        <form onSubmit={ onSubmit }>
+        <form onSubmit={ onSubmit } aria-label="form">
             <input 
                 type="text" 
                 placeholder="Buscar gifs"
@@ -32,4 +32,8 @@ export const AddCategory = ({ onNewCategory }) => {
             onClick={ onSubmit }>Agregar</button>
         </form>
     )
+}
+
+AddCategory.propTypes = {
+    onNewCategory: PropTypes.func.isRequired,
 }
