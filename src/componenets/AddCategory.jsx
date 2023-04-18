@@ -8,8 +8,8 @@ export const AddCategory = ({ onNewCategory }) => {
     // const onInputChange = (event) => {
     //     setInputValue(event.target.value)
     // }
-    const onInputChange = ({target}) => {
-        setInputValue(target.value)
+    const onInputChange = ({ target }) => {
+        setInputValue( target.value )
     }
 
     const onSubmit = event => {

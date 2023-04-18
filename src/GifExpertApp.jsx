@@ -18,12 +18,12 @@ export const GifExpertApp = () => {
         
     }
 
-    // const deleteCategory = (e) => {
-    //     const cat = e.target.previousSibling.innerHTML
-    //     const arr = categories
-    //     const temporalArr = arr.filter( category => category !== cat )
-    //     setCategories(temporalArr)
-    // }
+    const deleteCategory = (e) => {
+        const cat = e.target.previousSibling.innerHTML
+        const arr = categories
+        const temporalArr = arr.filter( category => category !== cat )
+        setCategories(temporalArr)
+    }
 
     return (
     <>
@@ -37,6 +37,7 @@ export const GifExpertApp = () => {
         { 
             categories.map( (category,i,arr) =>(
                 <GifGrid 
+                onDelCategory = {e => deleteCategory(e)}
                 key={ category } 
                 category={ category }
                 arr = { arr }
